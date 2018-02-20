@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import ReactStateDemo from './react-state-demo';
 import ReduxStateDemo from './redux-state-demo';
 import ReduxStateRefinedDemo from './redux-state-refined-demo';
+import ReduxStateThunkDemo from './redux-state-thunk-demo';
 
 const reactStateHash = '#react-state';
 const reduxStateHash = '#redux-state';
 const reduxStateRefinedHash = '#redux-state-refined';
+const reduxStateThunkHash = '#redux-state-thunk';
 
 class App extends Component {
     state = {
@@ -42,6 +44,16 @@ class App extends Component {
                     </a>
                 </div>
 
+                <div>
+                    <a
+                        href={ reduxStateThunkHash }
+                        onClick={ () => this.setState({ hash: reduxStateThunkHash }) }
+                    >
+                        Redux State Thunk
+                    </a>
+                </div>
+
+
                 {
                     (() => {
                         switch (this.state.hash) {
@@ -53,6 +65,9 @@ class App extends Component {
 
                             case reduxStateRefinedHash:
                                 return <ReduxStateRefinedDemo />;
+
+                            case reduxStateThunkHash:
+                                return <ReduxStateThunkDemo />;
 
                             default:
                                 return null;
