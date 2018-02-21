@@ -6,8 +6,8 @@ import reducer from './reducer';
 const store = createStore(
     reducer,
     applyMiddleware(
-        logger,
-        thunk
+        thunk,
+        logger
     )
 );
 

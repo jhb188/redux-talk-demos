@@ -60,7 +60,9 @@ const reducer = (
 const store = createStore(reducer);
 
 // log the initial state of our store
+console.log('Initial state:');
 console.log(store.getState());
+console.log('');
 
 // we call the `dispatch` method of our store with a single argument, a plain
 // JavaScript object called an action, which must have a type property
@@ -69,8 +71,9 @@ store.dispatch({
     description: 'My First Todo',
 });
 
+console.log('After first `store.dispatch`:');
 console.log(store.getState());
-
+console.log('');
 
 // createTodo is an action creator because it returns a redux action
 export const createTodo = description => ({
@@ -80,7 +83,9 @@ export const createTodo = description => ({
 
 store.dispatch(createTodo('My Second Todo'));
 
+console.log('After `store.dispatch` with action creator:');
 console.log(store.getState());
+console.log('');
 
 // other action creators
 export const toggleTodoComplete = todoId => ({
