@@ -1,12 +1,15 @@
 import React from 'react';
 
 const Todos = ({
-    createTodo,
+    // store.dispatch
     dispatch,
-    newTodoDescription,
-    todos,
+    // action creators
+    createTodo,
     toggleTodoComplete,
     updateNewTodoDescription,
+    // data from mapStateToProps
+    newTodoDescription,
+    todos,
 }) => (
     <div>
         <ul>

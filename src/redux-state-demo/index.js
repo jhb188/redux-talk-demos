@@ -15,6 +15,7 @@ const mapStateToProps = state => ({
     updateNewTodoDescription,
 });
 
+// connectTodoState is a higher-order component
 const connectTodoState = connect(mapStateToProps);
 
 const ReduxConnectedTodos = connectTodoState(Todos);

@@ -12,14 +12,17 @@ rather than a plain action. Instead of passing the function to the next handler
 (our argument `dispatch` below). Then, we are able to `dispatch` actions in the
 function body.
 */
-export const createTodo = description => dispatch => {
-    dispatch({ type: CREATE_TODO_START });
+export const createTodo = description => {
+    // Normally, you'd return an action object here
+    return dispatch => {
+        dispatch({ type: CREATE_TODO_START });
 
-    // dispatch action with type CREATE_TODO_SUCCESS after 1500 ms
-    setTimeout(
-        () => dispatch({ type: CREATE_TODO_SUCCESS, description }),
-        1500
-    );
+        // dispatch action with type CREATE_TODO_SUCCESS after 1500 ms
+        setTimeout(
+            () => dispatch({ type: CREATE_TODO_SUCCESS, description }),
+            1500
+        );
+    };
 };
 
 

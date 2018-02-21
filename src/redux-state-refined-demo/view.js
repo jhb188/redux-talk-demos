@@ -1,11 +1,13 @@
 import React from 'react';
 
 const Todos = ({
+    // action creators
     createTodo,
-    newTodoDescription,
-    todos,
     toggleTodoComplete,
     updateNewTodoDescription,
+    // data from mapStateToProps
+    newTodoDescription,
+    todos,
 }) => (
     <div>
         <ul>
